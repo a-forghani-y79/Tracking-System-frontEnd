@@ -1,0 +1,110 @@
+@font-face{
+    font-family: "Vazir";
+    src: url(../../assets/fonts/Vazir.ttf);
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Vazir;
+}
+.main-container{
+    width: 100%;
+    height: 100vh;
+}
+main{
+    width:1097px;
+    height:627px;
+
+    border:2px solid #B9B9B9 ;
+    border-radius: 40px;
+
+}
+.image-container{
+    /* background-color: red; */
+    width: 450px;
+    height: 500px;
+}
+.main-image-container{
+    background-image: url(../../assets/images/Group22@2x.png) ;
+    background-size: cover;
+    width: 302px;
+    height: 389px;
+}
+.text {
+    text-align: center;
+    font-weight: bold;
+    color:#727272;
+}
+.divider{
+    background-color: #B9B9B9;
+    width: 1px;
+    height: 520px;
+}
+.form-container{
+
+    width: 450px;
+    height: 500px;
+    padding-right: 20px;
+}
+.title{
+    width: 100%;
+    color: #707070;
+}
+
+.title h1,.form h1{
+    font-size:25px ;
+}
+.form{
+    width: 430px;
+    height: 400px;
+    /* background-color: red; */
+}
+.hint span,.forget-pass span{
+    font-size: 14px;
+}
+#enter-phone-number-input{
+    border-radius: 10px;
+    height: 45px;
+    padding-right: 50px;
+}
+.keyPad-image{
+    background-image: url(../../assets/images/key-numbers.png) ;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin: 7px 10px;
+}
+.submit-button-container{
+    margin-top: 120px;
+}
+#submit-button{
+    background-color: #FFC731;
+    font-size: 20px;
+    height: 40px;
+}
+.logos{
+    width: 430px;
+    height: 55px;
+}
+.facebook-logo{
+    background-image: url(../../assets/images/Facebook_50px.png) ;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+.instagram-logo{
+    background-image: url(../../assets/images/instagram_30px2.png) ;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+}
+.twitter-logo{
+    background-image: url(../../assets/images/twitter_squared_50px2.png) ;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+
+}
