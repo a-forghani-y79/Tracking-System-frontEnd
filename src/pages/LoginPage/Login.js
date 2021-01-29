@@ -1,73 +1,101 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './login.css';
-import LoginForm from '../../components/LoginForm/LoginForm'
+import EnterPassForm from '../../components/LoginForm/EnterPassForm'
+import EnterPhoneForm from '../../components/LoginForm/EnterPhoneForm'
+import OneTimePassForm from '../../components/LoginForm/OneTimePassForm'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
-const Login = (props) =>{
+const Login = (props) => {
     // const[productState,setProduct] = useState('')
 
 
-    
-    return(
+
+    return (
         <div>
             <div class="d-lg-flex justify-content-center align-items-center main-container">
-            <main class="d-lg-flex justify-content-around align-items-center">
-                <div class="image-container d-lg-flex flex-column align-items-center justify-content-end">
-                    <div class="main-image-container">
+                <main class="d-lg-flex justify-content-around align-items-center">
+                    <div class="image-container d-lg-flex flex-column align-items-center justify-content-end">
+                        <div class="main-image-container">
 
-                    </div>
-                    <div class="text">
+                        </div>
+                        <div class="text">
 
                             <span>
                                 (Tracking System) تیم موون کنار هم جمع شدن تا سامانه ردیابی
                             </span>
-                            <br/>
+                            <br />
                             <span>
                                 .رو ساده و زیبا پیاده سازی کنند
                             </span>
-                            <br/>
+                            <br />
                             <span>
-                                :) مثلِ ماه 
+                                :) مثلِ ماه
                             </span>
-                            <br/>
+                            <br />
                             <span>
                                 ترم 1-99
                             </span>
-                        
-                       
+
+
+                        </div>
                     </div>
-                </div>
-                <div class="divider">
-    
-                </div>
-                <div class="form-container d-lg-flex align-items-end flex-column">
-                    <div class="title d-lg-flex justify-content-end">
-                        <h1>
-                            ورود
+                    <div class="divider">
+
+                    </div>
+                    <div class="form-container d-lg-flex align-items-end flex-column">
+                        <div class="title d-lg-flex justify-content-end">
+                            <h1>
+                                ورود
                         </h1>
-                    </div>
-                    <br/>
-                    <div class="form">
-                        <LoginForm/>
-                    </div>
-                    <div class="logos d-lg-flex justify-content-center align-items-center">
-                        <div class="facebook-logo">
+                        </div>
+                        <br />
+                        <div class="form">
+                            {/* <OneTimePassForm/> */}
+                            <Router>
+                                <Switch>
+                                    <Route exact path='/'>
+                                        <EnterPhoneForm />
+                                    </Route>
+                                    <Route exact path='/EnterPassWord'>
+                                        <EnterPassForm/> 
+                                    </Route>
+                                    <Route exact path='/OneTimePassWord'>
+                                        <OneTimePassForm/> 
+                                    </Route>
+
+                                </Switch>
+                            </Router>
 
                         </div>
-                        <div class="instagram-logo">
+                        <div class="logos d-lg-flex justify-content-center align-items-center">
+                            <a href="">
+                                <div class="facebook-logo">
 
-                        </div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="instagram-logo">
 
-                        <div class="twitter-logo">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="twitter-logo">
 
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
+
+
         </div>
 
-
-        </div>
-      
     )
 }
 export default Login;

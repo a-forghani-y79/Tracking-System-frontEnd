@@ -1,11 +1,17 @@
 import React,{useState} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
- const LoginForm = ()=>{
+ const EnterPassForm = ()=>{
     return(
         <div>
             
                         <h1 class="text-right">
-                            شماره تماس
+                             رمز عبور
                         </h1>
                         <br/>
                         <div class="hint d-lg-flex justify-content-end align-items-end">
@@ -28,7 +34,7 @@ import React,{useState} from 'react';
                         <br/>
                         <div class="forget-pass d-lg-flex justify-content-end align-items-end">
                             <span>
-                               آیا رمز عبور خود را فراموش کرده اید ؟ <a href=""> ورود با رمز یکبار مصرف </a> 
+                               آیا رمز عبور خود را فراموش کرده اید ؟ <Link to = "/OneTimePassWord"><a href=""> ورود با رمز یکبار مصرف </a> </Link>
                             </span>
                         </div>
                         <div class="submit-button-container">
@@ -41,4 +47,4 @@ import React,{useState} from 'react';
 }
 
 
-export default LoginForm;
+export default EnterPassForm;
