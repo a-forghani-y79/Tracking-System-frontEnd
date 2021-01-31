@@ -131,3 +131,42 @@ main{
     border-bottom-color: #707070 ;
    
 }
+/* @keyframes slidein {
+    from { 
+        opacity: 0;
+     }
+    to   { 
+        width:100 ;
+     }
+  }
+  @keyframes slideout {
+    from { 
+        opacity: 100;
+     }
+    to   { 
+        opacity:0 ;
+     }
+  }
+ 
+.alertBox{
+    position: absolute;
+    width: 462px;
+    height: 48px;
+    background-color:#E14B4B ;
+    color: #ffffff;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    text-align: right;
+    padding: 10px 30px;
+    right: 0;
+    bottom: 20px;
+    animation: 1s   forwards  slidein;
+
+    
+}
+.outer-class{
+    animation: 1s  3s forwards   slideout;
+} */
+.rtl-text{
+    text-align: right;
+}

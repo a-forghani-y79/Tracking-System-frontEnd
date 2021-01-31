@@ -8,7 +8,8 @@ import Countdown from 'react-countdown';
     const [val4, setVal4] = useState("");
     const [val5, setVal5] = useState("");
     const [val6, setVal6] = useState("");
-    const [snedMessageText,setSendMessageText] = useState('ارسال مجدد در')
+    const [sendMessageText,setSendMessageText] = useState('ارسال مجدد در')
+   
 
     
       function autoTab(current,to){
@@ -16,13 +17,23 @@ import Countdown from 'react-countdown';
                 to.focus();
               }
       }
-      const renderer = ({ hours, minutes, seconds, completed }) => {
+      function resendMessage(e){
+          e.preventDefault();
+          if(sendMessageText === 'ارسال مجدد'){
+                setSendMessageText('ارسال مجدد در')
+          }
+      }
+
+      const renderer = ({ minutes, seconds, completed }) => {
+          
         if (completed) {
           // Render a completed state
           // after ending the time
+          completed = !completed
+          
           setSendMessageText('ارسال مجدد')
           return " "
-        } else if(snedMessageText ==='ارسال مجدد در'){
+        } else if(sendMessageText ==='ارسال مجدد در'){
           // Render a countdown
           return <span>{minutes}:{seconds}</span>;
         }
@@ -92,14 +103,12 @@ import Countdown from 'react-countdown';
                     <br />
                     <div className="forget-pass d-lg-flex justify-content-end align-items-end">
                         <span>
-                            <a href="#">
-                            {snedMessageText}{ 
+                            <a href="#" onClick={resendMessage}>
+                            {sendMessageText}{ 
                             <Countdown
                             
                             date={Date.now() + 75000}
-                            renderer={renderer}
-                            />
-                            
+                            renderer={renderer}/>                        
                             } 
                             </a>
                         </span>
