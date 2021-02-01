@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
 import SideBar from "../../components/Admin/SideBar/SideBar"
-import "./adminDashboard.css";
 
+import Home from "../../layouts/AdminLayouts/home";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect
+} from "react-router-dom";
+import TeamPage from "../../layouts/AdminLayouts/TeamPage";
+import './Admin.css'
 class AdminDashboard extends Component {
     constructor(props) {
         super(props)
@@ -13,12 +22,23 @@ class AdminDashboard extends Component {
 
     render() {
         return (
-            <div className = 'main-container'>
-                <div className='group-image-container'>
+            <div>
 
+                <div className='main-container'>
+                    {/* <Router>
+                    <Switch>
+                        <Route exact path='/dashboard/' component={Home}/>
+                        <Route exact path='/dashboard/' component={TeamPage}/>
+                         
+                    </Switch>
+                </Router> */}
+                    <TeamPage />
                 </div>
+
+
                 <SideBar />
             </div>
+
 
         )
     }

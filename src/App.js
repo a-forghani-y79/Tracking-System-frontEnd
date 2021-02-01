@@ -13,8 +13,8 @@ function App() {
     <div >
       <Router>
         <Switch>
-          <Route exact path='/Login' component={Login} />
-          <Route exact path='/dashboard' component={AdminDashboard} />
+          <Route  path='/Login' component={Login} />
+          <Route  path='/dashboard' component={AdminDashboard} />
               
           
           {/* <Redirect from="/" to="/Login" /> */}

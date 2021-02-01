@@ -16,7 +16,7 @@ import {
     }
     
     CheckPhoneNumber = ()=>{
-        this.props.checkPhone(this.state.phoneNumber,'Login/EnterPassWord')
+        this.props.checkPhone(this.state.phoneNumber)
     }
 
     render(){

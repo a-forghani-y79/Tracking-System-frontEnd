@@ -13,7 +13,8 @@ import {
     Route,
     Link,
     match,
-    withRouter
+    withRouter,
+    useRouteMatch
 } from "react-router-dom";
 
 class Login extends Component {
@@ -26,16 +27,16 @@ class Login extends Component {
             }
         };
     }
-     notify = (text) => toast.error(text);
-    checkPhone = (number,path) => {
+    notify = (text) => toast.error(text);
+    checkPhone = (number) => {
         if (number === '09142673982') {
-            // document.location.href = 'http://localhost:3000/Login/EnterPassWord'
-            this.props.history.push(path);
-            
+            document.location.href = 'http://localhost:3000/Login/EnterPassWord'
+            //  this.props.history.push('Login/EnterPassWord');
+
             // alert('hello');
         }
 
-        else if(number !== ''){
+        else if (number !== '') {
             this.setState({
                 alert: {
                     showAlert: true,
@@ -46,13 +47,14 @@ class Login extends Component {
         }
 
     }
+
     checkPass = () => {
 
     }
     checkOneTimePass = () => {
 
     }
-   
+
 
 
 
@@ -63,19 +65,20 @@ class Login extends Component {
             this.notify(this.state.alert.alertText)
             showAlertBox = (
                 <ToastContainer
-                rtl 
-                position="bottom-right"
-                style={{ width: "400px" }}
-                 />
+                    rtl
+                    position="bottom-right"
+                    style={{ width: "400px" }}
+                />
             )
-            
-            
+
+
         }
-        const  {path}  = this.props.match;
-        
+        const { path } = this.props.match;
+
+
         return (
             <div>
-                <div class="d-lg-flex justify-content-center align-items-center main-container">
+                <div class="d-lg-flex justify-content-center align-items-center login-main-container">
                     <main class="d-lg-flex justify-content-around align-items-center">
                         <div class="image-container d-lg-flex flex-column align-items-center justify-content-end">
                             <div class="main-image-container">
@@ -102,32 +105,64 @@ class Login extends Component {
 
                             </div>
                         </div>
-                        <div class="divider">
+                        <div class="divider-vr">
 
                         </div>
                         <div class="form-container d-lg-flex align-items-end flex-column">
+
                             <div class="title d-lg-flex justify-content-end">
-                                <h1>
-                                    ورود
-                            </h1>
+                                <Link to = {`${path}/EnterPassWord`}>
+                                    <h1>
+                                        ورود
+                                </h1>
+                                </Link>
+
                             </div>
+
+
                             <br />
                             <div class="form">
 
-                                <Router>
+                                {/* <Router>
                                     <Switch>
-                                        <Route exact path={`${path}/`} >
+                                        <Route  path={`${path}/`} >
                                             <EnterPhoneForm checkPhone={this.checkPhone} />
+                                            {
+                                                console.log(path)
+                                            }
                                         </Route>
-                                        <Route exact path={`${path}/EnterPassWord`}>
+                                        <Route  path={`${path}/EnterPassWord`}>
                                             <EnterPassForm checkPass={this.checkPass} />
                                         </Route>
-                                        <Route exact path={`${path}/OneTimePassWord`}>
+                                        <Route  path={`${path}/OneTimePassWord`}>
                                             <OneTimePassForm checkOneTimePass={this.checkOneTimePass} />
                                         </Route>
 
                                     </Switch>
+                                </Router> */}
+                                <Router>
+                                    <Switch>
+                                        <Route path={`${path}/EnterPassWord`}  >
+                                            <EnterPassForm checkPass={this.checkPass} />
+                                            {
+                                                console.log("hello")
+                                            }
+                                        </Route>
+
+                                        <Route exact path={`${path}`} >
+                                            <EnterPhoneForm checkPhone={this.checkPhone} />
+
+                                        </Route>
+                                        <Route path={`${path}/OneTimePassWord`}>
+                                            <OneTimePassForm checkOneTimePass={this.checkOneTimePass} />
+                                        </Route>
+
+
+
+
+                                    </Switch>
                                 </Router>
+
 
                             </div>
                             <div class="logos d-lg-flex justify-content-center align-items-center">
@@ -151,9 +186,9 @@ class Login extends Component {
                     </main>
 
                     <div className='rtl-text'>
-                    {showAlertBox}
+                        {showAlertBox}
                     </div>
-                    
+
 
 
                 </div>
@@ -162,7 +197,7 @@ class Login extends Component {
             </div>
 
         )
-        
+
     }
 
 

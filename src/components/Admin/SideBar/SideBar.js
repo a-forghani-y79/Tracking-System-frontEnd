@@ -19,7 +19,7 @@ const SideBar = () => {
 
             <nav className='SidebarNav'>
                 <div className='profile-container'>
-                    <div className='image-container'>
+                    <div className='user-image-container'>
 
                     </div>
                     <div className='info-container'>

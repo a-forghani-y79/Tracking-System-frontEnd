@@ -10,7 +10,7 @@ import {
     constructor(props) {
         super(props);
         this.state = {
-           
+           passWord:''
         };
     }
     render(){
@@ -41,7 +41,7 @@ import {
                             <br/>
                             <div class="forget-pass d-lg-flex justify-content-end align-items-end">
                                 <span>
-                                   آیا رمز عبور خود را فراموش کرده اید ؟ <a href=""> ورود با رمز یکبار مصرف </a> 
+                                   آیا رمز عبور خود را فراموش کرده اید ؟ <Link to = "Login/OneTimePassWord"><a href=""> ورود با رمز یکبار مصرف </a>  </Link>
                                 </span>
                             </div>
                             <div class="submit-button-container">
