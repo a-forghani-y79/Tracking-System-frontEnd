@@ -1,0 +1,97 @@
+.employee-table {
+    padding: 30px;
+}
+
+.employee-table table{
+    direction: rtl;
+    border-radius: 25px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #B9B9B9 !important;
+    
+}
+.table-header{
+    background-color: #E6E6E6;
+    border-radius: 20px;
+
+}
+
+.employee-table tr{
+    text-align: center;
+}
+.employee-list-title{
+    font-size: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.kick-btn{
+    border: 1px solid #ff6131;
+    background-color: white;
+    color:#B9B9B9 ;
+    width: 100px;
+    padding:  2px 5px;
+    border-radius: 20px;
+}
+.option-btns-container{
+    width: 400px;
+}
+.back-btn{
+    border: 1px solid #B9B9B9;
+    background-color: white;
+    color:#B9B9B9 ;
+    width: 150px;
+    padding:  2px 5px;
+    border-radius: 20px;
+}
+.remove-btn{
+    border: 1px solid #ff6131;
+    background-color: #E14B4B;
+    color:#B9B9B9 ;
+    width: 150px;
+    padding:  2px 5px;
+    border-radius: 20px;
+}
+.remove-input-container{
+    text-align: right;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+/* 
+modal
+ */
+.add-member-btn{
+    display: flex;
+    justify-content: space-around;
+}
+.modal-title{
+    font-size: 24px;
+
+}
+.invite-Modal-body{
+    display: flex;
+    justify-content: space-between;
+}
+.invite-input-container{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    
+}
+#invite-input-email{
+    width: 350px;
+    border-radius: 15px;
+
+
+}
+.invite-btn{
+    border: 1px solid #268F49;
+    background-color: white;
+    color:#268F49 ;
+    width: 350px;
+    padding:  2px 5px;
+    border-radius: 20px;
+}

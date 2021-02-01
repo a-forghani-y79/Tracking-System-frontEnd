@@ -1,0 +1,37 @@
+.projects-table {
+    padding: 30px;
+}
+
+.projects-table table{
+    direction: rtl;
+    border-radius: 25px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #B9B9B9 !important;
+    
+}
+.table-header{
+    background-color: #E6E6E6;
+    border-radius: 20px;
+
+}
+.project-list-title{
+    font-size: 24px;
+}
+.projects-table tr{
+    text-align: center;
+}
+.project-list-title{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+}
+.track-btn{
+    border: 1px solid #FFC731;
+    background-color: white;
+    color:#B9B9B9 ;
+    
+    padding:  2px 5px;
+    border-radius: 20px;
+}
