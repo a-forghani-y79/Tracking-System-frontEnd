@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './projectsSliders.css'
-
+import emptyImage from '../../../../../assets/images/Ellipse-13.svg'
 function ProjectsSlider() {
 
 
@@ -41,7 +41,7 @@ function ProjectsSlider() {
                 <img
                   className="rounded-circle"
                   alt={"users here"}
-                  src={`https://source.unsplash.com/random/${current.id}`}
+                  src={emptyImage}
                   height={65}
                   width={65}
                 />

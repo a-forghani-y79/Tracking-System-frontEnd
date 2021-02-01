@@ -1,0 +1,64 @@
+.CreateTeamForm-form{
+    padding-right: 30px;
+}
+
+.CreateTeamForm-input-groupp{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+#team-name,#name-of-new-member,#name-of-project,#select-manager{
+    width: 600px;
+    border-radius: 15px;
+    text-align: right;
+}
+.CreateTeamForm-title{
+    font-size: 24px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+}
+.upload-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+
+.upload-file-btn-Team{
+    display: block;
+    position: relative;
+    width: 220px;
+
+    cursor: pointer;
+    border: 0;
+    height: 40px;
+    border-radius: 20px;
+    outline: 0;
+}
+
+.upload-file-btn-Team:hover:after {
+    background: #ededee;
+}
+.upload-file-btn-Team:after {
+    transition: 200ms all ease;
+    border: 3px solid rgba(0,0,0,.2);
+    border-radius: 20px;
+    background: #ffffff;
+    color: #B9B9B9;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: 'انتخاب فایل';
+    line-height: 30px;
+    border-radius: 5px;
+}

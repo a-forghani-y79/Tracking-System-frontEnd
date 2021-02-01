@@ -8,16 +8,38 @@ import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import closeIcone from '../../../../assets/images/layer1.svg'
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 function TeamMainPage() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [addMemberisOpen, setaddMemberisOpen] = useState(false);
+    const [addProjectisOpen, setaddProjectisOpen] = useState(false);
+    const [startDate, setStartDate] = useState(new Date());
 
-    const showModal = () => {
-        setIsOpen(true);
+    const handleDayClick = (day) => {
+        console.log(day);
+    }
+
+    const showaddMemberModal = () => {
+        setaddMemberisOpen(true);
     };
 
-    const hideModal = () => {
-        setIsOpen(false);
+    const hideaddMemberModal = () => {
+        setaddMemberisOpen(false);
     };
+
+
+
+    const showAddProjectModal = () => {
+        setaddProjectisOpen(true);
+    };
+
+    const hideAddProjectModal = () => {
+        setaddProjectisOpen(false);
+    };
+
+
+
     return (
 
         <div>
@@ -33,7 +55,7 @@ function TeamMainPage() {
                 <div className='projects-slider-container'>
                     <div className='slider-title-container'>
 
-                        <div className='add-project-btn'>
+                        <div className='add-project-btn' onClick={showAddProjectModal}>
                             <div>
                                 <span>
                                     افزودن پروژه های جدید
@@ -52,7 +74,7 @@ function TeamMainPage() {
                 <div className='members-slider-container'>
                     <div className='slider-title-container'>
 
-                        <div className='add-member-btn' onClick={showModal}>
+                        <div className='add-member-btn' onClick={showaddMemberModal}>
                             <div>
                                 <span>
                                     افزودن عضو جدید
@@ -70,29 +92,29 @@ function TeamMainPage() {
                 </div>
             </div>
             <div className='addMemberModal'>
-                <Modal show={isOpen} onHide={hideModal} size="lg">
+                <Modal show={addMemberisOpen} onHide={hideaddMemberModal} size="lg">
                     {/* <Modal.Header>
                         <Modal.Title>Hi</Modal.Title>
                     </Modal.Header> */}
                     <Modal.Body>
-                        
-                            <div className='addMember-Modal-title'>
-                               
-                                    
-                                <img className='modal-close-btn' src={closeIcone}></img>
-                                    
-                                
-                                <div className ='modal-title'>
-                                    <span> افزودن عضو جدید</span>
-                                </div>
-                                
+
+                        <div className='addMember-Modal-title'>
+
+
+                            <img className='modal-close-btn' src={closeIcone}></img>
+
+
+                            <div className='modal-title'>
+                                <span> افزودن عضو جدید</span>
                             </div>
-                            <div className='addMember-Modal-body'>
-                                <div className = 'search-icone'></div>
-                                <input className='form-control'/>
-                            </div>
-                        
-                        
+
+                        </div>
+                        <div className='addMember-Modal-body'>
+                            <div className='search-icone'></div>
+                            <input className='form-control' />
+                        </div>
+
+
                     </Modal.Body>
                     {/* <Modal.Footer>
                         <button onClick={hideModal}>Cancel</button>
@@ -101,19 +123,69 @@ function TeamMainPage() {
                 </Modal>
 
             </div>
-            {/* <div className='addProjectModal'>
-                <Modal show={isOpen} onHide={hideModal}>
-                    <Modal.Header>
-                        <Modal.Title>Hi</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>The body</Modal.Body>
-                    <Modal.Footer>
-                        <button onClick={hideModal}>Cancel</button>
+            <div className='addProjectModal'>
+                <Modal show={addProjectisOpen} onHide={hideAddProjectModal} size="lg">
+
+                    <Modal.Body>
+                        <div className='addMember-Modal-title'>
+
+
+                            <img className='modal-close-btn' src={closeIcone}></img>
+
+
+                            <div className='modal-title'>
+                                <span> افزودن پروژه جدید</span>
+                            </div>
+
+                        </div>
+                        <br />
+                        <div className='addProject-Modal-body'>
+                            <form>
+                                <div className='input-groupp'>
+                                    <label class="control-label">نام پروژه</label>
+                                    <input id='project-name' className='form-control' placeholder='نام پروژه را وارد کنید '></input>
+                                </div>
+                                <br />
+                                <div className='input-groupp'>
+                                    <label class="control-label">مدیر پروژه</label>
+                                    <input id='choose-manager' className='form-control' placeholder='مدیر پروژه را انتخاب کنید '></input>
+                                </div>
+                                <br />
+                                <div className='input-groupp'>
+                                    <label class="control-label">تاریخ تحویل پروژه</label>
+                                    <DatePicker id='project-data-picker' selected={startDate} onChange={date => setStartDate(date)} />
+                                    {/* <input id='project-data-picker' className='form-control' placeholder='99/05/08'>
+                                    
+                                    </input> */}
+                                </div>
+                                <br />
+                                <div className='project-upload-container'>
+
+                                    <button className='submit-btn'>
+                                        ثبت
+                                        </button>
+
+                                    <div className='d-lg-flex flex-column align-items-end'>
+                                        <label class="control-label">مستندات پروژه</label>
+                                        <br />
+                                        <input id='upload-file-btn' type='file' className='upload-file-btn' placeholder=''></input>
+                                    </div>
+
+
+                                </div>
+                                <br />
+
+
+                            </form>
+                        </div>
+                    </Modal.Body>
+                    {/* <Modal.Footer>
+                        <button onClick={hideAddProjectModal}>Cancel</button>
                         <button>Save</button>
-                    </Modal.Footer>
+                    </Modal.Footer> */}
                 </Modal>
 
-            </div> */}
+            </div>
 
         </div>
     )

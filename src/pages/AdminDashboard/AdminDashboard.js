@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import TeamPage from "../../layouts/AdminLayouts/TeamPage";
 import './Admin.css'
+import CreateTeamForm from "../../components/Admin/CreateTeam/CreateTeamForm";
 class AdminDashboard extends Component {
     constructor(props) {
         super(props)
@@ -29,10 +30,11 @@ class AdminDashboard extends Component {
                     <Switch>
                         <Route exact path='/dashboard/' component={Home}/>
                         <Route exact path='/dashboard/' component={TeamPage}/>
+                        <Route exact path='/dashboard/' component={CreateTeamForm}/>
                          
                     </Switch>
                 </Router> */}
-                    <TeamPage />
+                    <CreateTeamForm />
                 </div>
 
 
