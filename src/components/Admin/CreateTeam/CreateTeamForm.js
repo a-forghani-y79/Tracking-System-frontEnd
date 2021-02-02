@@ -1,10 +1,18 @@
 import { React, useState, useEffect } from 'react'
 import './createTeamForm.css'
 import DatePicker from "react-datepicker";
+import { j_DatePicker } from "jalali-react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import searchIcone from '../../../assets/images/Search-icone.svg'
+import Select from 'react-select'
+// import { colourOptions } from '../data';
 function CreateTeamForm() {
     const [startDate, setStartDate] = useState(new Date());
+    const options = [
+        { value: 'chocolate', label: 'قادر صالحی' },
+        { value: 'strawberry', label: 'علی علیزاده' },
+        { value: 'vanilla', label: 'حسن شماعی زاده' }
+      ]
     return (
         <>
             <div className='CreateTeamForm-title'>
@@ -21,7 +29,19 @@ function CreateTeamForm() {
                     <br />
                     <div className='CreateTeamForm-input-groupp'>
                         <label class="control-label"> افزودن عضو جدید</label>
-                        <input id='name-of-new-member' className='form-control' placeholder='نام عضو جدید را جست و جو کنید '></input>
+                        <div>
+                            <img className='position-absolute fix-serch-icon-style' src={searchIcone}></img>
+                            {/* <input id='name-of-new-member' className='form-control' placeholder='نام عضو جدید را جست و جو کنید '></input> */}
+                            <Select  
+                            isRtl={true}
+                            id='name-of-new-member'
+                            isMulti
+                            name="colors"
+                            options={options}
+                            className="basic-multi-select"
+                            classNamePrefix="select"
+                            />
+                        </div>
                     </div>
                     <br />
                     <div className='CreateTeamForm-input-groupp'>
@@ -31,7 +51,13 @@ function CreateTeamForm() {
                     <br />
                     <div className='CreateTeamForm-input-groupp'>
                         <label class="control-label"> مدیر پروژه</label>
-                        <input id='select-manager' className='form-control' placeholder='مدیر پروژه را انتخاب کنید'></input>
+                        {/* <input id='select-manager' className='form-control' placeholder='مدیر پروژه را انتخاب کنید'></input> */}
+                        <Select  
+                            isRtl={true}
+                            id='name-of-new-member'
+                            options={options}
+                            
+                            />
                     </div>
                     <br />
                     <div className='CreateTeamForm-input-groupp'>
