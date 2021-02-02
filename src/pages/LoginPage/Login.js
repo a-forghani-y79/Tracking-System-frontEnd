@@ -180,6 +180,7 @@ class Login extends Component {
                                         </Route>
                                         <Route exact path={`${path}/OneTimePassWord`}>
                                             {/*<Route exact path={`http:///OneTimePassWord`}>*/}
+                                            // checkOneTimePass is for checking is phone and password are correct or not
                                             <OneTimePassForm checkOneTimePass={this.checkOneTimePass}/>
                                         </Route>
                                     </Switch>
