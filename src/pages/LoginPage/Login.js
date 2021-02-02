@@ -49,7 +49,12 @@ class Login extends Component {
                 })
             }
         }).catch(e => {
-            //todo alert network error
+            this.setState({
+                    alert: {
+                        showAlert: true,
+                        alertText: `SERVER ERROR`
+                    }
+                })
         })
 
 
@@ -66,7 +71,13 @@ class Login extends Component {
             }
         }).catch(e => {
             if (e.status === 404) {
-                //todo alert password is wrong
+                
+                this.setState({
+                    alert: {
+                        showAlert: true,
+                        alertText: `رمز وارد شده معتبر نمی باشد`
+                    }
+                })
             }
         })
     }
