@@ -1,0 +1,108 @@
+
+
+.SidebarNav{
+    
+    background-color: #F5F5F5;
+    width: 264px;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
+
+   
+}
+.profile-container{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
+.user-image-container{
+    background-image: url(../../../assets/images/user.png) ;
+    background-size: cover;
+    width: 83px;
+    height: 83px;
+}
+.info-container{
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.roll{
+    font-size: 14px;
+    color: #B9B9B9;
+
+}
+.name{
+    font-size: 18px;
+    margin-top: 10px;
+}
+.divider{
+    width: 80%;
+    height: 2px;
+    background-color: #E6E6E6;
+    margin-bottom: 20px;
+}
+.SidebarWrap{
+    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    
+
+ 
+}
+.element{
+    width: 264px;
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #5a5959;
+    padding: 0 20px;
+}
+.element:hover{
+    background-color: #c5c5c5;
+}
+.decoration:hover{
+    text-decoration: none;
+}
+.subElement{
+    color: #5a5959;
+    width: 264px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+    height: 50px;
+}
+.subElement span{
+    color: #797979;
+    text-decoration: none;
+}
+.subElement:hover{
+    text-decoration: none;
+    background-color: #f8fcd8;
+    cursor: pointer;
+}
+.margin-left{
+    margin-left: 5px;
+}
+
+ 
+
+

@@ -7,6 +7,8 @@ import {
   Redirect
 } from "react-router-dom";
 import AdminDashboard from './pages/AdminDashboard/AdminDashboard'
+import EmployeeDashboard from './pages/EmployeeDashboard/EmployeeDashboard'
+import Board from "./pages/Board/Board";
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
       <Router>
         <Switch>
           <Route  path='/Login' component={Login} />
-          <Route  path='/dashboard' component={AdminDashboard} />
-              
+          <Route  path='/AdminDashboard' component={AdminDashboard} />
+          <Route  path='/EmployeeDashboard' component={EmployeeDashboard} />
+          <Route  path='/Board' component={Board} />
           
           {/* <Redirect from="/" to="/Login" /> */}
         </Switch>

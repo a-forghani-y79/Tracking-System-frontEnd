@@ -34,3 +34,10 @@
     padding:  2px 5px;
     border-radius: 20px;
 }
+.track-btn-disable{
+    border: 1px solid #FFC731;
+    background-color: #E6E6E6;
+    color:#B9B9B9 ;
+    padding:  2px 5px;
+    border-radius: 20px;
+}

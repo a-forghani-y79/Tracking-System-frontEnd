@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_162" data-name="Group 162" transform="translate(-213 -370)">
+    <g id="Ellipse_15" data-name="Ellipse 15" transform="translate(213 370)" fill="#fafafa" stroke="#797979" stroke-width="0.5">
+      <circle cx="25" cy="25" r="25" stroke="none"/>
+      <circle cx="25" cy="25" r="24.75" fill="none"/>
+    </g>
+    <g id="attach-paperclip-symbol" transform="translate(225.656 382.999)">
+      <g id="_x34__17_" transform="translate(0.343 0.001)">
+        <g id="Group_161" data-name="Group 161" transform="translate(0)">
+          <path id="Path_5146" data-name="Path 5146" d="M23.123,8.746,10.912,20.822a5.222,5.222,0,0,1-7.327,0,5.083,5.083,0,0,1,0-7.246L14.575,2.708a3.482,3.482,0,0,1,4.885,0,3.388,3.388,0,0,1,0,4.83L8.469,18.406a1.74,1.74,0,0,1-2.443,0,1.7,1.7,0,0,1,0-2.415L15.8,6.331,14.574,5.123,4.806,14.784a3.388,3.388,0,0,0,0,4.83,3.482,3.482,0,0,0,4.884,0L20.681,8.747a5.083,5.083,0,0,0,0-7.246,5.222,5.222,0,0,0-7.327,0L1.753,12.973l.042.042a6.772,6.772,0,0,0,.569,9.015,6.962,6.962,0,0,0,9.116.562l.042.042L24.343,9.955Z" transform="translate(-0.343 -0.001)" fill="#ffc731"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
