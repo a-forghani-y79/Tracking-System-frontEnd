@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {otp} from "../../services/LoginAuth";
 import {
     BrowserRouter as Router,
     Switch,
@@ -16,6 +17,15 @@ class EnterPassForm extends Component {
 
     checkPass = () => {
         this.props.checkPass(sessionStorage.getItem("number"), this.state.password)
+    }
+    sendRequrst = () => {
+        otp(sessionStorage.getItem("number")).then(response => {
+            sessionStorage.setItem("otp",response.data.tempPassword.code)
+            console.log(sessionStorage.getItem("otp"))
+        }).catch(e => {
+            console.log("error")
+            console.log(e)
+        })
     }
 
     render() {
@@ -49,7 +59,8 @@ class EnterPassForm extends Component {
                 <br/>
                 <div class="forget-pass d-lg-flex justify-content-end align-items-end">
                                 <span>
-                                   آیا رمز عبور خود را فراموش کرده اید ؟ <Link to="OneTimePassWord"><a href=""> ورود با رمز یکبار مصرف </a>  </Link>
+                                   آیا رمز عبور خود را فراموش کرده اید ؟ <Link to="OneTimePassWord"><a
+                                    onClick={this.sendRequrst} href=""> ورود با رمز یکبار مصرف </a>  </Link>
                                 </span>
                 </div>
                 <div class="submit-button-container">

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Countdown from 'react-countdown';
-import {otp} from "../../services/LoginAuth";
 
 const OneTimePassForm = () => {
     const [val1, setVal1] = useState("");
@@ -41,16 +40,9 @@ const OneTimePassForm = () => {
             return ""
     };
 
+    const onClickLogin=()=>{
 
-    useEffect(() => {
-        otp(sessionStorage.getItem("number")).then(data => {
-            console.log(data)
-        }).catch(e => {
-            console.log("fuck")
-            console.log(e)
-
-        })
-    })
+    }
 
 
     return (
