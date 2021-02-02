@@ -40,6 +40,7 @@ function CreateTeamForm() {
                             options={options}
                             className="basic-multi-select"
                             classNamePrefix="select"
+                            placeholder='نام عضو جدید را جست و جو کنید '
                             />
                         </div>
                     </div>
@@ -56,7 +57,7 @@ function CreateTeamForm() {
                             isRtl={true}
                             id='name-of-new-member'
                             options={options}
-                            
+                            placeholder='مدیر پروژه را انتخاب کنید'
                             />
                     </div>
                     <br />

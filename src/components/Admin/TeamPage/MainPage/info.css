@@ -1,0 +1,26 @@
+.info-box-container{
+    width: 600px;
+    height: 270px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    border: 1px solid #B9B9B9;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+}
+.info-box-submit-and-history-container{
+    width: 100%;
+    justify-content: space-between;
+}
+.info-box-submit-btn{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border-color: white;
+    border: 1px solid  #FFC731;
+    outline: none;
+    border-radius: 20px;
+    color:#FFC731;
+    
+}

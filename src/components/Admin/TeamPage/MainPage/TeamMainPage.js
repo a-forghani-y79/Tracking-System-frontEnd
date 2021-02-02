@@ -7,14 +7,21 @@ import AddMember from "../Modals/AddMember";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import closeIcone from '../../../../assets/images/layer1.svg'
-
+import Select from 'react-select'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import InfoBox from "./InfoBox";
 
 function TeamMainPage() {
     const [addMemberisOpen, setaddMemberisOpen] = useState(false);
     const [addProjectisOpen, setaddProjectisOpen] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
+    const [showInfoBox,setShowInfoBox] = useState(false)
+    const options = [
+        { value: 'قادر صالحی', label: 'قادر صالحی' },
+        { value: 'علی علیزاده', label: 'علی علیزاده' },
+        { value: 'حسن شماعی زاده', label: 'حسن شماعی زاده' }
+      ]
 
     const handleDayClick = (day) => {
         console.log(day);
@@ -26,6 +33,7 @@ function TeamMainPage() {
 
     const hideaddMemberModal = () => {
         setaddMemberisOpen(false);
+        setShowInfoBox(false)
     };
 
 
@@ -38,6 +46,9 @@ function TeamMainPage() {
         setaddProjectisOpen(false);
     };
 
+    const handleEmployeeInfo = (val)=>{
+        setShowInfoBox(true)
+    }
 
 
     return (
@@ -110,8 +121,19 @@ function TeamMainPage() {
 
                         </div>
                         <div className='addMember-Modal-body'>
-                            <div className='search-icone'></div>
-                            <input className='form-control' />
+                            {/* <div className='search-icone'></div> */}
+                            <Select  
+                            onChange={(e)=>handleEmployeeInfo(e.value)}
+                            isRtl={true}
+                            id='name-of-new-member'
+                            name="colors"
+                            options={options}
+                            className="basic-multi-select"
+                            classNamePrefix="select"
+                            placeholder='نام عضو جدید را جست و جو کنید '
+                            />
+                            {/* <input className='form-control' /> */}
+                           <InfoBox showBox={showInfoBox}/>
                         </div>
 
 
@@ -148,7 +170,14 @@ function TeamMainPage() {
                                 <br />
                                 <div className='input-groupp'>
                                     <label class="control-label">مدیر پروژه</label>
-                                    <input id='choose-manager' className='form-control' placeholder='مدیر پروژه را انتخاب کنید '></input>
+
+                                    <Select
+                                        isRtl={true}
+                                        id='name-of-new-member'
+                                        options={options}
+                                        placeholder='مدیر پروژه را انتخاب کنید'
+                                    />
+                                     {/* <input id='choose-manager' className='form-control' placeholder='مدیر پروژه را انتخاب کنید '></input> */}
                                 </div>
                                 <br />
                                 <div className='input-groupp'>

@@ -7,7 +7,7 @@
     width: 200px;
     height: 220px;
     color: white;
-    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 5px 5px 5px rgba(173, 153, 153, 0.1);
     border-radius: 20px;
 }
 .project-card:hover{
