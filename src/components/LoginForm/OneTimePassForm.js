@@ -53,7 +53,7 @@ import Countdown from 'react-countdown';
                     <br />
                     <div class="hint d-lg-flex justify-content-end align-items-end">
                         <span class="mr-3">
-                            <a class="text-decoration-none" href="#">ویرایش شماره تماس</a>
+                            <a class="text-decoration-none" href="http://localhost:3000/Login">ویرایش شماره تماس</a>
                         </span>
                         <span class="text-right">
                             کاربر به شماره تماس 09142673982

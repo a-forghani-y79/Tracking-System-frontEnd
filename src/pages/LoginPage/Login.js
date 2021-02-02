@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './login.css';
 import EnterPassForm from '../../components/LoginForm/EnterPassForm'
 import EnterPhoneForm from '../../components/LoginForm/EnterPhoneForm'
 import OneTimePassForm from '../../components/LoginForm/OneTimePassForm'
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from 'styled-components';
+import {phoneValidation} from "../../services/LoginAuth"
+import {checkPass} from "../../services/LoginAuth"
+import {otp} from "../../services/LoginAuth"
 
 import {
     BrowserRouter as Router,
@@ -16,46 +19,62 @@ import {
     withRouter,
     useRouteMatch
 } from "react-router-dom";
+import axios from "axios";
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            number: "",
             alert: {
                 showAlert: false,
                 alertText: ''
             }
         };
     }
+
     notify = (text) => toast.error(text);
     checkPhone = (number) => {
-        if (number === '09142673982') {
-            document.location.href = 'http://localhost:3000/Login/EnterPassWord'
-            //  this.props.history.push('Login/EnterPassWord');
+        phoneValidation(number).then(data => {
+            console.log(data)
+            if (data.data) {
+                sessionStorage.setItem("number", number)
+                document.location.href = 'http://localhost:3000/Login/EnterPassWord'
+            } else {
+                this.setState({
+                    alert: {
+                        showAlert: true,
+                        alertText: `کاربر با شماره تماس ${number} در سامانه ثبت نشده است`
+                    }
+                })
+            }
+        }).catch(e => {
+            //todo alert network error
+        })
 
-            // alert('hello');
-        }
-
-        else if (number !== '') {
-            this.setState({
-                alert: {
-                    showAlert: true,
-                    alertText: `کاربر با شماره تماس ${number} در سامانه ثبت نشده است`
-                }
-            })
-
-        }
 
     }
 
-    checkPass = () => {
-
+    checkPass = (number, password) => {
+        checkPass(number, password).then(data => {
+            if (data.data.role === "ADMIN") {
+                sessionStorage.setItem("person", data.data)
+                document.location.href = 'http://localhost:3000/AdminDashboard'
+            } else {
+                sessionStorage.setItem("person", data.data)
+                document.location.href = 'http://localhost:3000/EmployeeDashboard'
+            }
+        }).catch(e => {
+            if (e.status === 404) {
+                //todo alert password is wrong
+            }
+        })
     }
     checkOneTimePass = () => {
+        otp(this.state.number).then(data => {
 
+        })
     }
-
-
 
 
     render() {
@@ -67,13 +86,13 @@ class Login extends Component {
                 <ToastContainer
                     rtl
                     position="bottom-right"
-                    style={{ width: "400px" }}
+                    style={{width: "400px"}}
                 />
             )
 
 
         }
-        const { path } = this.props.match;
+        const {path} = this.props.match;
 
 
         return (
@@ -89,15 +108,15 @@ class Login extends Component {
                                 <span>
                                     (Tracking System) تیم موون کنار هم جمع شدن تا سامانه ردیابی
                                 </span>
-                                <br />
+                                <br/>
                                 <span>
                                     .رو ساده و زیبا پیاده سازی کنند
                                 </span>
-                                <br />
+                                <br/>
                                 <span>
                                     :) مثلِ ماه
                                 </span>
-                                <br />
+                                <br/>
                                 <span>
                                     ترم 1-99
                                 </span>
@@ -111,16 +130,16 @@ class Login extends Component {
                         <div class="form-container d-lg-flex align-items-end flex-column">
 
                             <div class="title d-lg-flex justify-content-end">
-                                
+
                                 <h1>
-                                        ورود
+                                    ورود
                                 </h1>
-                                
+
 
                             </div>
 
 
-                            <br />
+                            <br/>
                             <div class="form">
 
                                 {/* <Router>
@@ -142,24 +161,16 @@ class Login extends Component {
                                 </Router> */}
                                 <Router>
                                     <Switch>
-                                        <Route path={`${path}/EnterPassWord`}  >
-                                            <EnterPassForm checkPass={this.checkPass} />
-                                            {
-                                                console.log("hello")
-                                            }
+                                        <Route path={`${path}/EnterPassWord`}>
+                                            <EnterPassForm checkPass={this.checkPass}/>
                                         </Route>
-
-                                        <Route exact path={`${path}`} >
-                                            <EnterPhoneForm checkPhone={this.checkPhone} />
-
+                                        <Route exact path={`${path}`}>
+                                            <EnterPhoneForm checkPhone={this.checkPhone}/>
                                         </Route>
                                         <Route exact path={`${path}/OneTimePassWord`}>
-                                            <OneTimePassForm checkOneTimePass={this.checkOneTimePass} />
+                                            {/*<Route exact path={`http:///OneTimePassWord`}>*/}
+                                            <OneTimePassForm checkOneTimePass={this.checkOneTimePass}/>
                                         </Route>
-
-
-
-
                                     </Switch>
                                 </Router>
 
@@ -190,7 +201,6 @@ class Login extends Component {
                     </div>
 
 
-
                 </div>
 
 
@@ -201,6 +211,6 @@ class Login extends Component {
     }
 
 
-
 }
+
 export default Login;
