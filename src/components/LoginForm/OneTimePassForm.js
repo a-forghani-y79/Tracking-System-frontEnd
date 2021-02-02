@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Countdown from 'react-countdown';
-
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const OneTimePassForm = () => {
     const [val1, setVal1] = useState("");
     const [val2, setVal2] = useState("");
@@ -9,7 +10,24 @@ const OneTimePassForm = () => {
     const [val5, setVal5] = useState("");
     const [val6, setVal6] = useState("");
     const [sendMessageText, setSendMessageText] = useState('ارسال مجدد در')
+    const [alert,setAlert] = useState({
+        showAlert: false,
+        alertText: '' 
+    })
 
+    const  notify = (text) => toast.error(text);
+
+    let showAlertBox = null
+    if (alert.showAlert) {
+        notify(alert.alertText)
+        showAlertBox = (
+            <ToastContainer
+                rtl
+                position="bottom-right"
+                style={{width: "400px"}}
+            />
+        )
+    }
 
     function autoTab(current, to) {
         if (current.value.length == current.getAttribute("maxlength")) {
@@ -27,8 +45,7 @@ const OneTimePassForm = () => {
     const renderer = ({minutes, seconds, completed}) => {
 
         if (completed) {
-            // Render a completed state
-            // after ending the time
+
             completed = !completed
 
             setSendMessageText('ارسال مجدد')
@@ -41,7 +58,16 @@ const OneTimePassForm = () => {
     };
 
     const onClickLogin=()=>{
-
+            let inputPass = `${val1}${val2}${val3}${val4}${val5}${val6}`;
+            if(inputPass === '123456'){
+                    // TODO
+            }
+            else{
+                setAlert({
+                    showAlert: true,
+                    alertText: 'رمز عبور معتبر نمی باشد' 
+                })
+            }
     }
 
 
@@ -115,7 +141,7 @@ const OneTimePassForm = () => {
                         </span>
             </div>
             <div className="submit-button-container">
-                <button id="submit-button" class="btn form-control">ورود</button>
+                <button id="submit-button" class="btn form-control" onClick={onClickLogin}>ورود</button>
             </div>
 
 

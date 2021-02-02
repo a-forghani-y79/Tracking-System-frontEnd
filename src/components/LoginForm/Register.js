@@ -21,12 +21,18 @@ const Register = ({match}) => {
     let { id } = useParams();
 
 
-    
-    const show = ()=>{
-        setAlert({
-            showAlert: true,
-            alertText: 'hello' 
-    })
+
+    const validation = ()=>{
+        if(name ==='ghader'){
+
+        }
+        else{
+            setAlert({
+                showAlert: true,
+                alertText: 'اطلاعات وارد شده معتبر نمی باشد.' 
+            })
+        }
+        
     }
 
 
@@ -100,7 +106,7 @@ const Register = ({match}) => {
                 <div class="register-button-container">
 
                     <button id="submit-button" class="btn form-control"
-                        onClick={() => show() }>
+                        onClick={() => validation() }>
                         ثبت نام
                     </button>
 
