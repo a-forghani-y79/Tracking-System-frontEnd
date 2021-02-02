@@ -153,7 +153,7 @@ class Login extends Component {
                                             <EnterPhoneForm checkPhone={this.checkPhone} />
 
                                         </Route>
-                                        <Route path={`${path}/OneTimePassWord`}>
+                                        <Route exact path={`${path}/OneTimePassWord`}>
                                             <OneTimePassForm checkOneTimePass={this.checkOneTimePass} />
                                         </Route>
 
