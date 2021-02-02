@@ -63,21 +63,34 @@ main{
 .hint span,.forget-pass span{
     font-size: 14px;
 }
-#enter-phone-number-input{
+#register-enter-phone-number-input{
     border-radius: 10px;
     height: 45px;
     padding-right: 50px;
+    margin-bottom: 14px;
 }
+#enter-name-lastName-input,#enter-email-addres-input{
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 45px;
+    padding-right: 10px;
+    margin-bottom: 10px
+}
+
 .keyPad-image{
     background-image: url(../../assets/images/key-numbers.png) ;
     background-size: cover;
     width: 30px;
     height: 30px;
     position: absolute;
-    margin: 7px 10px;
+    margin: 0px 10px;
+    margin-top: 40px;
 }
 .submit-button-container{
     margin-top: 120px;
+}
+.register-button-container{
+    margin-top: 30px;
 }
 #submit-button{
     background-color: #FFC731;
@@ -131,42 +144,7 @@ main{
     border-bottom-color: #707070 ;
    
 }
-/* @keyframes slidein {
-    from { 
-        opacity: 0;
-     }
-    to   { 
-        width:100 ;
-     }
-  }
-  @keyframes slideout {
-    from { 
-        opacity: 100;
-     }
-    to   { 
-        opacity:0 ;
-     }
-  }
- 
-.alertBox{
-    position: absolute;
-    width: 462px;
-    height: 48px;
-    background-color:#E14B4B ;
-    color: #ffffff;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    text-align: right;
-    padding: 10px 30px;
-    right: 0;
-    bottom: 20px;
-    animation: 1s   forwards  slidein;
 
-    
-}
-.outer-class{
-    animation: 1s  3s forwards   slideout;
-} */
 .rtl-text{
     text-align: right;
 }

@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import {phoneValidation} from "../../services/LoginAuth"
 import {checkPass} from "../../services/LoginAuth"
 import {otp} from "../../services/LoginAuth"
-
+import Register from "../../components/LoginForm/Register";
 import {
     BrowserRouter as Router,
     Switch,
@@ -181,6 +181,10 @@ class Login extends Component {
                                         <Route exact path={`${path}/OneTimePassWord`}>
                                             {/*<Route exact path={`http:///OneTimePassWord`}>*/}
                                             <OneTimePassForm checkOneTimePass={this.checkOneTimePass}/>
+                                        </Route>
+                                        <Route exact path={`${path}/Register/:id`}>
+                                            {/*<Route exact path={`http:///OneTimePassWord`}>*/}
+                                            <Register />
                                         </Route>
                                     </Switch>
                                 </Router>
