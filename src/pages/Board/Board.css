@@ -20,3 +20,9 @@
     display: flex;
     justify-content: space-around;
 }
+#project-data-picker {
+    border: 1px solid rgb(179, 176, 176) ;
+    outline: 0;    
+    height: 35px;
+    padding-right: 10px;
+}

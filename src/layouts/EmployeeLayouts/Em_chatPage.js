@@ -10,7 +10,7 @@ const Em_chatPage = ()=> {
                     <img src={BackBtn}></img>
                 </div>
                 <div className='chat-title-container'>
-                    <span id='project-name'>
+                    <span id='chat-project-name'>
                         نام پروژه
                     </span>
                     <span id='manager-name'>

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import './list.css'
 import add from "../../assets/images/plus-black.svg";
-function List() {
+const List = (props)=> {
     return (
         <>
             <div className='list-container'>
@@ -14,15 +14,19 @@ function List() {
 
                 </div>
                 <div className='add-card-to-list'>
-                    <div className=''>
-                        <span>
-                            افزودن کارت جدید
+
+
+                    <button className='btn d-lg-flex' onClick={props.addFunction}>
+                        <div className=''>
+                            <span>
+                                افزودن کارت جدید
                         </span>
-                    </div>
-                    <div className='add-card-btn'>
-                        <img src={add}>
-                        </img>
-                    </div>
+                        </div>
+                        <div className='add-card-btn'>
+                            <img src={add}>
+                            </img>
+                        </div>
+                    </button>
                 </div>
             </div>
 

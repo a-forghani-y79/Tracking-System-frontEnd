@@ -111,11 +111,11 @@ class Login extends Component {
                         <div class="form-container d-lg-flex align-items-end flex-column">
 
                             <div class="title d-lg-flex justify-content-end">
-                                <Link to = {`${path}/EnterPassWord`}>
-                                    <h1>
+                                
+                                <h1>
                                         ورود
                                 </h1>
-                                </Link>
+                                
 
                             </div>
 
