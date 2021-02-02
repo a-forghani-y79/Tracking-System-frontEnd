@@ -35,32 +35,38 @@ class Login extends Component {
 
     notify = (text) => toast.error(text);
     checkPhone = (number) => {
-            phoneValidation(number).then(data => {
-                console.log(data)
-                if (data.data) {
-                    sessionStorage.setItem("number",number)
-                    document.location.href = 'http://localhost:3000/Login/EnterPassWord'
-                } else {
-                    this.setState({
-                        alert: {
-                            showAlert: true,
-                            alertText: `کاربر با شماره تماس ${number} در سامانه ثبت نشده است`
-                        }
-                    })
-                }
-            })
+        phoneValidation(number).then(data => {
+            console.log(data)
+            if (data.data) {
+                sessionStorage.setItem("number", number)
+                document.location.href = 'http://localhost:3000/Login/EnterPassWord'
+            } else {
+                this.setState({
+                    alert: {
+                        showAlert: true,
+                        alertText: `کاربر با شماره تماس ${number} در سامانه ثبت نشده است`
+                    }
+                })
+            }
+        }).catch(e => {
+            //todo alert network error
+        })
 
 
     }
 
-    checkPass = (number,password) => {
+    checkPass = (number, password) => {
         checkPass(number, password).then(data => {
-            if (data.data.role==="ADMIN"){
-                sessionStorage.setItem("person",data.data)
+            if (data.data.role === "ADMIN") {
+                sessionStorage.setItem("person", data.data)
                 document.location.href = 'http://localhost:3000/AdminDashboard'
-            }else {
-                sessionStorage.setItem("person",data.data)
+            } else {
+                sessionStorage.setItem("person", data.data)
                 document.location.href = 'http://localhost:3000/EmployeeDashboard'
+            }
+        }).catch(e => {
+            if (e.status === 404) {
+                //todo alert password is wrong
             }
         })
     }
@@ -161,7 +167,8 @@ class Login extends Component {
                                         <Route exact path={`${path}`}>
                                             <EnterPhoneForm checkPhone={this.checkPhone}/>
                                         </Route>
-                                        <Route path={`${path}/OneTimePassWord`}>
+                                        <Route exact path={`${path}/OneTimePassWord`}>
+                                            {/*<Route exact path={`http:///OneTimePassWord`}>*/}
                                             <OneTimePassForm checkOneTimePass={this.checkOneTimePass}/>
                                         </Route>
                                     </Switch>
