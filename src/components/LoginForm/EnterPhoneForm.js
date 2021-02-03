@@ -28,7 +28,7 @@ class EnterPassForm extends Component {
                 </h1>
                 <br/>
                 <div class="d-lg-flex justify-content-end">
-                    <div class="keyPad-image">
+                    <div class="keyPad-imagee">
 
                     </div>
                     <input id="enter-phone-number-input" type="text"

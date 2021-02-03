@@ -49,7 +49,7 @@ class EnterPassForm extends Component {
                 </div>
                 <br/>
                 <div class="d-lg-flex justify-content-end">
-                    <div class="keyPad-image">
+                    <div class="keyPad-imagee">
 
                     </div>
                     <input onChange={(e) => this.setState({password: e.target.value})}

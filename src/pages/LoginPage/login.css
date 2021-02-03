@@ -63,6 +63,12 @@ main{
 .hint span,.forget-pass span{
     font-size: 14px;
 }
+#enter-phone-number-input{
+    border-radius: 10px;
+    height: 45px;
+    padding-right: 50px;
+    margin-bottom: 14px;
+}
 #register-enter-phone-number-input{
     border-radius: 10px;
     height: 45px;
@@ -85,6 +91,16 @@ main{
     position: absolute;
     margin: 0px 10px;
     margin-top: 40px;
+}
+.keyPad-imagee{
+    background-image: url(../../assets/images/key-numbers.png) ;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin: 6px 10px;
+    
+ 
 }
 .submit-button-container{
     margin-top: 120px;
