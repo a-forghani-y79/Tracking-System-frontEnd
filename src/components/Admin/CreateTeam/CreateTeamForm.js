@@ -9,9 +9,9 @@ import Select from 'react-select'
 function CreateTeamForm() {
     const [startDate, setStartDate] = useState(new Date());
     const options = [
-        { value: 'chocolate', label: 'قادر صالحی' },
-        { value: 'strawberry', label: 'علی علیزاده' },
-        { value: 'vanilla', label: 'حسن شماعی زاده' }
+        { value: '', label: 'قادر صالحی' },
+        { value: '', label: 'علی علیزاده' },
+        { value: '', label: ' رضا حبیبی' }
       ]
     return (
         <>

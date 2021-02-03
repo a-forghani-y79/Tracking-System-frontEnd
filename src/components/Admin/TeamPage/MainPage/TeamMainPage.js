@@ -18,9 +18,9 @@ function TeamMainPage() {
     const [startDate, setStartDate] = useState(new Date());
     const [showInfoBox,setShowInfoBox] = useState(false)
     const options = [
-        { value: 'قادر صالحی', label: 'قادر صالحی' },
-        { value: 'علی علیزاده', label: 'علی علیزاده' },
-        { value: 'حسن شماعی زاده', label: 'حسن شماعی زاده' }
+        { value: '', label: 'قادر صالحی' },
+        { value: '', label: 'علی علیزاده' },
+        { value: '', label: ' رضا حبیبی' }
       ]
 
     const handleDayClick = (day) => {
