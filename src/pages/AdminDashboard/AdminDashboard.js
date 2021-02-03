@@ -38,7 +38,7 @@ class AdminDashboard extends Component {
                          
                     </Switch>
                 </Router> */}
-                    <Home />
+                    <CreateTeamForm />
                 </div>
 
 
