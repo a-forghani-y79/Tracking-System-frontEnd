@@ -11,6 +11,9 @@ function CreateTeamForm() {
     const options = [
         { value: '', label: 'قادر صالحی' },
         { value: '', label: 'علی علیزاده' },
+        { value: '', label: ' رضا حبیبی' },
+        { value: '', label: 'قادر صالحی' },
+        { value: '', label: 'علی علیزاده' },
         { value: '', label: ' رضا حبیبی' }
       ]
     return (
