@@ -12,16 +12,25 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import InfoBox from "./InfoBox";
 
-function TeamMainPage() {
+
+const TeamMainPage = () => {
     const [addMemberisOpen, setaddMemberisOpen] = useState(false);
     const [addProjectisOpen, setaddProjectisOpen] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
-    const [showInfoBox,setShowInfoBox] = useState(false)
+    const [showInfoBox, setShowInfoBox] = useState(false)
     const options = [
         { value: '', label: 'قادر صالحی' },
         { value: '', label: 'علی علیزاده' },
         { value: '', label: ' رضا حبیبی' }
-      ]
+    ]
+    const params = {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        }
+    }
 
     const handleDayClick = (day) => {
         console.log(day);
@@ -46,7 +55,7 @@ function TeamMainPage() {
         setaddProjectisOpen(false);
     };
 
-    const handleEmployeeInfo = (val)=>{
+    const handleEmployeeInfo = (val) => {
         setShowInfoBox(true)
     }
 
@@ -81,6 +90,7 @@ function TeamMainPage() {
                         </div>
                     </div>
                     <ProjectsSlider />
+                    
                 </div>
                 <div className='members-slider-container'>
                     <div className='slider-title-container'>
@@ -122,18 +132,18 @@ function TeamMainPage() {
                         </div>
                         <div className='addMember-Modal-body'>
                             {/* <div className='search-icone'></div> */}
-                            <Select  
-                            onChange={(e)=>handleEmployeeInfo(e.value)}
-                            isRtl={true}
-                            id='name-of-new-member'
-                            name="colors"
-                            options={options}
-                            className="basic-multi-select"
-                            classNamePrefix="select"
-                            placeholder='نام عضو جدید را جست و جو کنید '
+                            <Select
+                                onChange={(e) => handleEmployeeInfo(e.value)}
+                                isRtl={true}
+                                id='name-of-new-member'
+                                name="colors"
+                                options={options}
+                                className="basic-multi-select"
+                                classNamePrefix="select"
+                                placeholder='نام عضو جدید را جست و جو کنید '
                             />
                             {/* <input className='form-control' /> */}
-                           <InfoBox showBox={showInfoBox}/>
+                            <InfoBox showBox={showInfoBox} />
                         </div>
 
 
@@ -177,7 +187,7 @@ function TeamMainPage() {
                                         options={options}
                                         placeholder='مدیر پروژه را انتخاب کنید'
                                     />
-                                     {/* <input id='choose-manager' className='form-control' placeholder='مدیر پروژه را انتخاب کنید '></input> */}
+                                    {/* <input id='choose-manager' className='form-control' placeholder='مدیر پروژه را انتخاب کنید '></input> */}
                                 </div>
                                 <br />
                                 <div className='input-groupp'>

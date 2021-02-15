@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import {useRouteMatch,useHistory } from 'react-router-dom'
 
 
 
@@ -19,40 +20,58 @@ const DropdownLink = styled(Link)`
   }
 `;
 
-const SubMenu = ({ item }) => {
+const SubMenu = (props) => {
     const [subnav, setSubnav] = useState(false);
+    const match = useRouteMatch();
+    const history = useHistory()
 
-    const showSubnav = () => setSubnav(!subnav);
+    const showSubnav = () => {
+        setSubnav(!subnav);
+        console.log('hello')
+    }
+    const testFunc = ()=>{
+        console.log(props)
+        if(props.item.path !== ''){
+            history.push(match.url + props.item.path)
+            console.log(match.url + props.item.path);
+        }
+           
+    }
 
     return (
         <>
-            <Link className='decoration' onClick={item.subNav && showSubnav}>
-                <div className="element">
+            {/* replace Link tage with a tag */}
+            <Link   className='decoration' onClick={props.item.subNav && showSubnav } >
+                <div className="element" onClick={testFunc}>
                     <div>
-                        {item.subNav && subnav
-                            ? item.iconOpened
-                            : item.subNav
-                                ? item.iconClosed
+                        {props.item.subNav && subnav
+                            ? props.item.iconOpened
+                            : props.item.subNav
+                                ? props.item.iconClosed
                                 : null}
                     </div>
                     <div >
-                        
-                        <span>{item.title}</span>
-                        {item.icon}
+
+                        <span>{props.item.title}</span>
+                        {props.item.icon}
                     </div>
 
                 </div>
 
             </Link>
             {subnav &&
-                item.subNav.map((item, index) => {
+                props.item.subNav.map((item, index) => {
+
+                    
                     return (
                         <div className='subElement'>
-                            <Link  key={index}>
-                                
+                            {/* replace Link tage with a tag */}
+                          {  console.log(index)}
+                            <a  key={index}>
+
                                 <span>{item.title}</span>
-                                     {item.icon} 
-                            </Link>
+                                {item.icon}
+                            </a>
                         </div>
 
                     );

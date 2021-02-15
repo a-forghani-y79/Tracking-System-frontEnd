@@ -56,6 +56,7 @@ class Login extends Component {
                     }
                 })
         })
+        
 
 
     }
@@ -170,7 +171,7 @@ class Login extends Component {
 
                                     </Switch>
                                 </Router> */}
-                                <Router>
+                                
                                     <Switch>
                                         <Route path={`${path}/EnterPassWord`}>
                                             <EnterPassForm checkPass={this.checkPass}/>
@@ -179,15 +180,14 @@ class Login extends Component {
                                             <EnterPhoneForm checkPhone={this.checkPhone}/>
                                         </Route>
                                         <Route exact path={`${path}/OneTimePassWord`}>
-                                            {/*<Route exact path={`http:///OneTimePassWord`}>*/}
                                             <OneTimePassForm checkOneTimePass={this.checkOneTimePass}/>
                                         </Route>
                                         <Route exact path={`${path}/Register/:id`}>
-                                            {/*<Route exact path={`http:///OneTimePassWord`}>*/}
                                             <Register />
                                         </Route>
                                     </Switch>
-                                </Router>
+                                
+                                
 
 
                             </div>

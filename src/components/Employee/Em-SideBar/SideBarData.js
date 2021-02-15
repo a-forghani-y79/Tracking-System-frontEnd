@@ -20,5 +20,6 @@ export const SidebarData = [
     path: '',
     icon: <img className='margin-left' src={Exit}></img>
   }
+
 ];
 export default SidebarData

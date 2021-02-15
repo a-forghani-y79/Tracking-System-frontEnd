@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import * as ReactBootstrap from 'react-bootstrap'
-import './EmployeesTable.css'
+// import './EmployeesTable.css'
 import Modal from "react-bootstrap/Modal";
 import plusBtn from '../../../assets/images/plus.svg'
 import closeIcone from '../../../assets/images/layer1.svg'

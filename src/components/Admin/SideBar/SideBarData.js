@@ -37,19 +37,25 @@ export const SidebarData = [
   },
   {
     title: 'پیگیری عملکرد',
-    path: '',
+    path: '/CreateTeam',
     icon: <img className='margin-left' src={chart}></img>
 
 
   },
   {
     title: 'مدیریت کارمندان',
-    path: '/products',
+    path: '',
     icon: <img className='margin-left' src={Manage}></img>
   },
   {
+    title: 'ایجاد تیم جدید',
+    path: '',
+    icon: <img className='margin-left' src={Manage}></img>
+  },
+
+  {
     title: 'خروج از حساب کاربری',
-    path: '/team',
+    path: '/',
     icon: <img className='margin-left' src={Exit}></img>
   }
 ];

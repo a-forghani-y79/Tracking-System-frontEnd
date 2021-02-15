@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import * as ReactBootstrap from 'react-bootstrap'
-import './ProjectsTable.css'
+// import './ProjectsTable.css'
 import {
     BrowserRouter as Router,
     Switch,

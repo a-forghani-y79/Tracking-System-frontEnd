@@ -1,10 +1,10 @@
 
 
 .SidebarNav{
-    
+    padding-top: 30px;
     background-color: #F5F5F5;
     width: 264px;
-    height: 100%;
+    height: 100vh ;
     display: flex;
     flex-flow: column;
     position: absolute;
@@ -12,8 +12,8 @@
     top: 0;
     right: 0;
     z-index: 10;
-    /* overflow-y: scroll;
-    overflow-x: hidden; */
+    overflow-y: scroll;
+    overflow-x: hidden;
 
    
 }
@@ -50,15 +50,20 @@
     font-size: 18px;
     margin-top: 10px;
 }
-.divider{
+/* .divider{
     width: 80%;
     height: 2px;
     background-color: #E6E6E6;
-    margin-bottom: 20px;
-}
+    margin: 20px 0;
+} */
+hr.divider{
+    border-top: 1px solid #E6E6E6;
+    width: 80%;
+  }
 .SidebarWrap{
     
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-flow: column;
@@ -88,6 +93,8 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     height: 50px;
 }
 .subElement span{

@@ -33,10 +33,11 @@ const ProjectsList = () => {
                     لیست پروژه ها
                 </span>
             </div>
-            <ReactBootstrap.Table borderless  hover rounded-top>
+            
+            <ReactBootstrap.Table borderless  hover rounded-top >
                 <thead className='table-header'>
-                    <tr>
-                        <th>نام پروژه</th>
+                    <tr className='rounded'>
+                        <th >نام پروژه</th>
                         <th>تاریخ تحویل پروژه</th>
                         <th>مدیر پروژه</th>
                         <th></th>
